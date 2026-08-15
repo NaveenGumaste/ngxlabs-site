@@ -11,6 +11,7 @@ import {
   SpotifyLogo,
   XLogo,
 } from "@phosphor-icons/react";
+import { SocialTooltip } from "@/components/profile/social-tooltip";
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
@@ -133,44 +134,43 @@ export function Hero() {
           DevOps Engineer &amp; Frontend Developer
         </p>
 
-        {/* Social Icons Row */}
-        <div className="mt-4 flex items-center justify-center gap-4 text-white">
-          <a
+        {/* Social Icons Row with Animated Tooltips */}
+        <div className="mt-4 flex items-center justify-center gap-2 text-white">
+          <SocialTooltip
+            name="Instagram"
+            handle="@ayee_naveen"
             href="https://www.instagram.com/ayee_naveen/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-            className="hover:scale-110 hover:text-emerald-400 transition-all"
+            ariaLabel="Instagram @ayee_naveen"
           >
-            <InstagramLogo size={22} weight="bold" />
-          </a>
-          <a
+            <InstagramLogo size={20} weight="bold" />
+          </SocialTooltip>
+
+          <SocialTooltip
+            name="Spotify"
+            handle="Naveen Gumaste"
             href="https://open.spotify.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Spotify"
-            className="hover:scale-110 hover:text-emerald-400 transition-all"
+            ariaLabel="Spotify Profile"
           >
-            <SpotifyLogo size={22} weight="fill" />
-          </a>
-          <a
+            <SpotifyLogo size={20} weight="fill" />
+          </SocialTooltip>
+
+          <SocialTooltip
+            name="X (Twitter)"
+            handle="@Z0D404"
             href="https://x.com/Z0D404"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="X (Twitter)"
-            className="hover:scale-110 hover:text-emerald-400 transition-all"
+            ariaLabel="X @Z0D404"
           >
-            <XLogo size={22} weight="bold" />
-          </a>
-          <a
+            <XLogo size={20} weight="bold" />
+          </SocialTooltip>
+
+          <SocialTooltip
+            name="GitHub"
+            handle="@NaveenGumaste"
             href="https://github.com/NaveenGumaste"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="hover:scale-110 hover:text-emerald-400 transition-all"
+            ariaLabel="GitHub @NaveenGumaste"
           >
-            <GithubLogo size={22} weight="bold" />
-          </a>
+            <GithubLogo size={20} weight="bold" />
+          </SocialTooltip>
         </div>
       </div>
     </div>
