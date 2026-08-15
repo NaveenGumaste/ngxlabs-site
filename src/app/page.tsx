@@ -12,15 +12,16 @@ import { MediaCard } from "@/components/profile/media-card";
 import { GridCard } from "@/components/profile/grid-card";
 import { AboutCard } from "@/components/profile/about-card";
 import { Footer } from "@/components/profile/footer";
+import { CardMotion } from "@/components/profile/card-motion";
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen w-full text-white flex flex-col items-center justify-between py-4 px-3 sm:py-8 sm:px-4">
-      {/* 1. Atmospheric Mesh Gradient Background */}
+      {/* 1. Atmospheric Mesh Gradient Background with Rising Animation */}
       <MeshBackground />
 
-      {/* 2. Solid Black Profile Card Container - Instant Server Paint (0ms delay) */}
-      <main className="relative z-10 w-full max-w-[460px] flex flex-col items-center overflow-hidden rounded-[38px] sm:rounded-[44px] bg-black shadow-[0_24px_80px_rgba(0,0,0,0.9)] border border-white/10 animate-fade-in">
+      {/* 2. Solid Black Profile Card with Synchronized Rising & Scale Entrance */}
+      <CardMotion>
         {/* Profile Hero Header with Full-Bleed Photo & Social Tooltips */}
         <div className="w-full">
           <Hero />
@@ -97,7 +98,7 @@ export default function HomePage() {
             />
           </div>
         </div>
-      </main>
+      </CardMotion>
 
       {/* 3. Footer */}
       <Footer />
