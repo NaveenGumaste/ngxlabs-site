@@ -135,7 +135,7 @@ export function Hero() {
         </p>
 
         {/* Social Icons Row with Animated Tooltips */}
-        <div className="mt-4 flex items-center justify-center gap-2 text-white">
+        <div className="mt-6 mb-2 flex items-center justify-center gap-3 text-white">
           <SocialTooltip
             name="Instagram"
             handle="@ayee_naveen"
