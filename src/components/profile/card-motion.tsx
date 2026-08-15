@@ -30,7 +30,7 @@ export function CardMotion({ children }: CardMotionProps) {
         delay: 0.08, // Subtle follow-through offset
         ease: [0.16, 1, 0.3, 1], // Identical Lovable exponential ease curve
       }}
-      className="relative z-10 w-[86vw] max-w-[320px] sm:max-w-[370px] md:max-w-[395px] flex flex-col items-center overflow-hidden rounded-[24px] sm:rounded-[30px] bg-black shadow-[0_16px_50px_rgba(0,0,0,0.9)] border border-white/10 will-change-transform"
+      className="relative z-10 w-[86vw] max-w-[325px] sm:w-full sm:max-w-[460px] md:max-w-[470px] flex flex-col items-center overflow-hidden rounded-[24px] sm:rounded-[44px] bg-black shadow-[0_16px_50px_rgba(0,0,0,0.9)] sm:shadow-[0_24px_80px_rgba(0,0,0,0.9)] border border-white/10 will-change-transform"
     >
       {children}
     </motion.main>

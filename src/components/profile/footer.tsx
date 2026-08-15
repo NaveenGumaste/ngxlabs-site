@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="mt-5 sm:mt-8 mb-3 sm:mb-5 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-2.5 gap-y-0.5 text-center text-[9.5px] sm:text-[10px] text-slate-400/80">
+    <footer className="mt-5 sm:mt-10 mb-3 sm:mb-6 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-0.5 sm:gap-y-1 text-center text-[9.5px] sm:text-xs text-slate-400/80">
       <a
         href="https://linktr.ee/privacy"
         target="_blank"

@@ -28,7 +28,7 @@ export default function HomePage() {
         </div>
 
         {/* Unified Content Stream */}
-        <div className="w-full flex flex-col gap-2.5 sm:gap-3.5 px-2.5 sm:px-3.5 pb-5 sm:pb-6 pt-1">
+        <div className="w-full flex flex-col gap-2.5 sm:gap-4 px-2.5 sm:px-4 pb-5 sm:pb-8 pt-1 sm:pt-2">
           {/* 1. About Me Card */}
           <AboutCard />
 
@@ -42,16 +42,16 @@ export default function HomePage() {
           />
 
           {/* 3. Featured Open-Source Media Card (Caravan) */}
-          <div className="flex flex-col gap-1 mt-0.5">
-            <p className="text-center font-semibold text-[9.5px] sm:text-[10.5px] text-slate-400 tracking-wider uppercase">
+          <div className="flex flex-col gap-1 sm:gap-2 mt-0.5 sm:mt-1">
+            <p className="text-center font-semibold sm:font-bold text-[9.5px] sm:text-xs text-slate-400 sm:text-slate-300/80 tracking-wider uppercase">
               Featured Project
             </p>
             <MediaCard />
           </div>
 
           {/* 4. Apps & Developer Tools Grid */}
-          <div className="flex flex-col gap-1.5 mt-0.5">
-            <p className="text-center font-semibold text-[9.5px] sm:text-[10.5px] text-slate-400 tracking-wider uppercase">
+          <div className="flex flex-col gap-1.5 sm:gap-2.5 mt-0.5 sm:mt-1">
+            <p className="text-center font-semibold sm:font-bold text-[9.5px] sm:text-xs text-slate-400 sm:text-slate-300/80 tracking-wider uppercase">
               Apps &amp; Open Source
             </p>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
               href="https://one-unitools.vercel.app/"
               title="UniTools"
               subtitle="40+ free utilities for file conversion & dev workflows"
-              icon={<Wrench size={14.5} weight="bold" />}
+              icon={<Wrench className="size-4 sm:size-5" weight="bold" />}
               isExternal={true}
             />
 
@@ -69,7 +69,7 @@ export default function HomePage() {
               href="https://kairocal.naveengumaste.me/"
               title="KairoCal"
               subtitle="India's only multi-broker fee comparison calculator"
-              icon={<RocketLaunch size={14.5} weight="bold" />}
+              icon={<RocketLaunch className="size-4 sm:size-5" weight="bold" />}
               isExternal={true}
             />
 
@@ -77,7 +77,7 @@ export default function HomePage() {
               href="https://gitviz.naveengumaste.me/"
               title="GitViz"
               subtitle="Interactive Git commit & branch visualizer map"
-              icon={<Compass size={14.5} weight="bold" />}
+              icon={<Compass className="size-4 sm:size-5" weight="bold" />}
               isExternal={true}
             />
 
@@ -85,7 +85,7 @@ export default function HomePage() {
               href="https://cryptoz1.vercel.app/"
               title="CryptoZ Dashboard"
               subtitle="Real-time cryptocurrency analytics & tracking"
-              icon={<CurrencyBtc size={14.5} weight="bold" />}
+              icon={<CurrencyBtc className="size-4 sm:size-5" weight="bold" />}
               isExternal={true}
             />
 
@@ -93,7 +93,7 @@ export default function HomePage() {
               href="https://naveengumaste.me"
               title="Full Portfolio & Engineering Case Studies"
               subtitle="Deep-dive benchmarks, architecture & live demos"
-              icon={<Globe size={14.5} weight="bold" />}
+              icon={<Globe className="size-4 sm:size-5" weight="bold" />}
               isExternal={true}
             />
           </div>

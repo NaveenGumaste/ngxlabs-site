@@ -52,21 +52,21 @@ export function SocialTooltip({
               damping: 24,
               mass: 0.7,
             }}
-            className="absolute bottom-[calc(100%+6px)] z-50 flex flex-col items-center pointer-events-none whitespace-nowrap"
+            className="absolute bottom-[calc(100%+6px)] sm:bottom-[calc(100%+8px)] z-50 flex flex-col items-center pointer-events-none whitespace-nowrap"
           >
             {/* Warm Beige Tooltip */}
-            <div className="relative flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-[#F5F1E8] text-neutral-900 shadow-[0_6px_16px_-3px_rgba(0,0,0,0.6),0_2px_4px_rgba(0,0,0,0.2)] border border-white/80 ring-1 ring-black/5 leading-none">
-              <span className="text-[10px] font-bold text-neutral-950 tracking-tight">
+            <div className="relative flex items-center gap-1 sm:gap-1.5 px-1.5 py-0.5 sm:px-2.5 sm:py-1.5 rounded-md sm:rounded-xl bg-[#F5F1E8] text-neutral-900 shadow-[0_6px_16px_-3px_rgba(0,0,0,0.6),0_2px_4px_rgba(0,0,0,0.2)] sm:shadow-[0_10px_28px_-4px_rgba(0,0,0,0.6),0_2px_8px_rgba(0,0,0,0.2)] border border-white/80 ring-1 ring-black/5 leading-none">
+              <span className="text-[10px] sm:text-[12px] font-bold text-neutral-950 tracking-tight">
                 {name}
               </span>
-              <span className="text-neutral-400 font-mono text-[8.5px]">·</span>
-              <span className="text-[9.5px] font-medium text-neutral-600">
+              <span className="text-neutral-400 font-mono text-[8.5px] sm:text-[10px]">·</span>
+              <span className="text-[9.5px] sm:text-[11.5px] font-medium text-neutral-600">
                 {handle}
               </span>
 
               {/* Bottom Pointer Arrow */}
               <div
-                className="absolute -bottom-1 left-1/2 -translate-x-1/2 size-1.5 rotate-45 bg-[#F5F1E8] border-r border-b border-white/60 shadow-sm"
+                className="absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 size-1.5 sm:size-2.5 rotate-45 bg-[#F5F1E8] border-r border-b border-white/60 shadow-sm"
                 aria-hidden="true"
               />
             </div>
@@ -81,7 +81,7 @@ export function SocialTooltip({
         rel="noreferrer"
         aria-label={ariaLabel}
         className={cn(
-          "grid size-8 sm:size-9 place-items-center rounded-full text-white/80 active:scale-95 transition-all duration-200",
+          "grid size-8 sm:size-11 place-items-center rounded-full text-white/80 active:scale-95 transition-all duration-200",
           brandHoverClass || "hover:text-white hover:bg-white/[0.1]"
         )}
       >
