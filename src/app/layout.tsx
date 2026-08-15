@@ -167,6 +167,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="content" className="flex-1">
           {children}
         </main>
+        {/* Simple Analytics */}
+        <Script
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
