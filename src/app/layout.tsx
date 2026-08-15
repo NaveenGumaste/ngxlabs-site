@@ -34,7 +34,7 @@ const gambarino = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Frontend Developer Portfolio India",
+    default: "Naveen Gumaste | Frontend Developer & DevOps Engineer",
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -43,27 +43,58 @@ export const metadata: Metadata = {
   creator: site.founder.name,
   publisher: site.name,
   keywords: [
-    "frontend developer portfolio India",
-    "Next.js developer Dharwad",
-    "DevOps engineer portfolio",
-    "cloud engineer India",
-    "React developer portfolio",
-    "web development services India",
+    "Naveen Gumaste",
+    "Frontend Developer",
+    "DevOps Engineer",
+    "Next.js Developer India",
+    "React Developer Dharwad",
+    "Cloud Engineer",
+    "ngxlabs",
   ],
   alternates: { canonical: site.url },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-32x32.webp", sizes: "32x32", type: "image/webp" },
+      { url: "/icon-16x16.webp", sizes: "16x16", type: "image/webp" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.webp", sizes: "512x512", type: "image/webp" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.webp", sizes: "180x180", type: "image/webp" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "icon",
+        type: "image/avif",
+        url: "/favicon.avif",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: "Frontend Developer Portfolio India",
+    title: "Naveen Gumaste | Frontend Developer & DevOps Engineer",
     description: site.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Naveen Gumaste • ngxlabs.site",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     creator: "@Z0D404",
-    title: "Frontend Developer Portfolio India",
+    title: "Naveen Gumaste | Frontend Developer & DevOps Engineer",
     description: site.description,
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -73,15 +104,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
-    { media: "(prefers-color-scheme: dark)", color: "#111111" },
-  ],
+  themeColor: "#06080F",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"

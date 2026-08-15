@@ -61,14 +61,14 @@ export function Footer() {
       </footer>
 
       {/* Floating QR Code in bottom-right corner (Desktop View only) */}
-      {/* <div className="fixed bottom-6 right-6 z-40 hidden xl:flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-black/90 backdrop-blur-md border border-white/10 shadow-2xl text-white">
+      <div className="fixed bottom-6 right-6 z-40 hidden xl:flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-black/90 backdrop-blur-md border border-white/10 shadow-2xl text-white">
         <span className="text-[10px] font-medium text-white/70 tracking-wide uppercase">
           View on mobile
         </span>
         <div className="size-20 grid place-items-center rounded-xl bg-white p-1 shadow-sm">
           <QrCode size={68} className="text-black" />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
