@@ -38,7 +38,7 @@ export function MeshBackground() {
           duration: 1.9,
           ease: [0.16, 1, 0.3, 1], // Cinematic exponential deceleration curve
         }}
-        className="absolute top-1/2 left-1/2 w-[320vw] sm:w-[280vw] md:w-[240vw] lg:w-[210vw] min-w-[2400px] max-w-[4600px] aspect-[1200/1210] pointer-events-none will-change-transform"
+        className="absolute top-1/2 left-1/2 w-[240vw] sm:w-[260vw] md:w-[230vw] lg:w-[200vw] min-w-[900px] sm:min-w-[1600px] md:min-w-[2200px] max-w-[4400px] aspect-[1200/1210] pointer-events-none will-change-transform"
       >
         <Image
           src="/Background/lovable-pulse.svg"

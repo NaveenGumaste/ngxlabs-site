@@ -12,7 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import { SocialTooltip } from "@/components/profile/social-tooltip";
 
-function PeerlistIcon({ size = 20 }: { size?: number }) {
+function PeerlistIcon({ size = 14.5 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -56,37 +56,37 @@ export function Hero() {
   return (
     <div className="relative w-full bg-black text-white">
       {/* 1. Full-Bleed Integrated Hero Image Container */}
-      <div className="relative h-[340px] sm:h-[380px] w-full overflow-hidden">
+      <div className="relative h-[320px] sm:h-[360px] md:h-[380px] w-full overflow-hidden">
         {/* Top-Right Floating Share Button */}
-        <div className="absolute top-4 right-4 z-30 pointer-events-auto">
+        <div className="absolute top-3 right-3 z-30 pointer-events-auto">
           <button
             type="button"
             onClick={handleShare}
             aria-label={copied ? "Link copied" : "Share profile"}
-            className="relative grid size-10 place-items-center rounded-full bg-black/40 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-105 active:scale-95 border border-white/15 shadow-sm"
+            className="relative grid size-7 sm:size-8 place-items-center rounded-full bg-black/40 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-105 active:scale-95 border border-white/15 shadow-sm"
             title="Share profile"
           >
             {copied ? (
-              <Check size={18} weight="bold" className="text-emerald-400" />
+              <Check size={14} weight="bold" className="text-emerald-400" />
             ) : (
-              <ShareNetwork size={18} weight="bold" />
+              <ShareNetwork size={14} weight="bold" />
             )}
             {copied && (
-              <span className="absolute -bottom-8 right-0 rounded-full bg-black/90 px-2.5 py-0.5 text-[10px] font-medium text-white shadow-lg whitespace-nowrap border border-white/10">
+              <span className="absolute -bottom-6 right-0 rounded-full bg-black/90 px-2 py-0.5 text-[8.5px] font-medium text-white shadow-lg whitespace-nowrap border border-white/10">
                 Copied!
               </span>
             )}
           </button>
         </div>
 
-        {/* Profile Image with Smooth Bottom Gradient Fade */}
+        {/* Profile Image with Clean Bottom-Only Gradient Fade */}
         <div
           className="relative size-full"
           style={{
             maskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.1) 92%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.3) 94%, rgba(0,0,0,0) 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.1) 92%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.3) 94%, rgba(0,0,0,0) 100%)",
           }}
         >
           <Image
@@ -97,43 +97,30 @@ export function Hero() {
             unoptimized
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQABAABUB8JQBOgB6LpjplElsAAP7uoGuYs0dXZ5dx15YwkqnEq1/cOpqGlhVp0p3v3qgWPHByX9PwwuAAAA=="
-            sizes="(max-width: 640px) 100vw, 460px"
-            className="object-cover object-[center_15%]"
+            sizes="(max-width: 640px) 340px, 420px"
+            className="object-cover object-[center_top] sm:object-[center_10%]"
           />
         </div>
 
-        {/* Soft Ambient Diffusion on Lower Region */}
+        {/* Soft Atmospheric Dissolve into Solid Black at the Very Bottom */}
         <div
-          className="absolute inset-x-0 bottom-0 h-1/2 pointer-events-none"
-          style={{
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            maskImage:
-              "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,1) 100%)",
-          }}
-        />
-
-        {/* Soft Atmospheric Dissolve into Solid Black */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-44 pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 35%, rgba(0, 0, 0, 0.75) 70%, rgba(0, 0, 0, 0.95) 90%, #000000 100%)",
+              "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.8) 80%, #000000 100%)",
           }}
         />
       </div>
 
       {/* 2. Profile Info Header */}
-      <div className="relative z-20 px-6 -mt-8 pb-4 text-center flex flex-col items-center">
+      <div className="relative z-20 px-3 sm:px-5 -mt-6 sm:-mt-8 pb-2.5 text-center flex flex-col items-center">
         {/* Stylized Signature Script Wordmark using Dancing Script */}
-        <div className="flex items-center justify-center my-1">
+        <div className="flex items-center justify-center my-0.5">
           <span
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-md select-none tracking-wide text-center"
+            className="text-[26px] sm:text-3xl md:text-[38px] font-bold text-white drop-shadow-md select-none tracking-wide text-center"
             style={{
               fontFamily: "var(--font-dancing-script), cursive",
-              textShadow: "0 2px 16px rgba(0,0,0,0.8)",
+              textShadow: "0 2px 14px rgba(0,0,0,0.8)",
             }}
           >
             NaveenGumaste
@@ -141,20 +128,20 @@ export function Hero() {
         </div>
 
         {/* Role Subtitle */}
-        <p className="mt-1 text-xs sm:text-sm font-medium text-white/80">
+        <p className="mt-0.5 text-[10.5px] sm:text-xs font-medium text-white/80">
           DevOps Engineer &amp; Frontend Developer
         </p>
 
         {/* Social Icons Row with Brand-Colored Hover Glow & Tooltips */}
-        <div className="mt-6 mb-2 flex items-center justify-center gap-2.5 sm:gap-3 text-white">
+        <div className="mt-3 sm:mt-4 mb-1 flex items-center justify-center gap-1.5 sm:gap-2 text-white">
           <SocialTooltip
             name="Instagram"
             handle="@ayee_naveen"
             href="https://www.instagram.com/ayee_naveen/"
             ariaLabel="Instagram @ayee_naveen"
-            brandHoverClass="hover:text-[#FF307A] hover:bg-[#FF307A]/15 hover:shadow-[0_0_20px_rgba(255,48,122,0.35)]"
+            brandHoverClass="hover:text-[#FF307A] hover:bg-[#FF307A]/15 hover:shadow-[0_0_16px_rgba(255,48,122,0.35)]"
           >
-            <InstagramLogo size={20} weight="bold" />
+            <InstagramLogo size={15} weight="bold" />
           </SocialTooltip>
 
           <SocialTooltip
@@ -162,9 +149,9 @@ export function Hero() {
             handle="Naveen Gumaste"
             href="https://open.spotify.com"
             ariaLabel="Spotify Profile"
-            brandHoverClass="hover:text-[#1DB954] hover:bg-[#1DB954]/15 hover:shadow-[0_0_20px_rgba(29,185,84,0.35)]"
+            brandHoverClass="hover:text-[#1DB954] hover:bg-[#1DB954]/15 hover:shadow-[0_0_16px_rgba(29,185,84,0.35)]"
           >
-            <SpotifyLogo size={20} weight="fill" />
+            <SpotifyLogo size={15} weight="fill" />
           </SocialTooltip>
 
           <SocialTooltip
@@ -172,9 +159,9 @@ export function Hero() {
             handle="@Z0D404"
             href="https://x.com/Z0D404"
             ariaLabel="X @Z0D404"
-            brandHoverClass="hover:text-[#38BDF8] hover:bg-[#38BDF8]/15 hover:shadow-[0_0_20px_rgba(56,189,248,0.35)]"
+            brandHoverClass="hover:text-[#38BDF8] hover:bg-[#38BDF8]/15 hover:shadow-[0_0_16px_rgba(56,189,248,0.35)]"
           >
-            <XLogo size={20} weight="bold" />
+            <XLogo size={15} weight="bold" />
           </SocialTooltip>
 
           <SocialTooltip
@@ -182,9 +169,9 @@ export function Hero() {
             handle="@NaveenGumaste"
             href="https://github.com/NaveenGumaste"
             ariaLabel="GitHub @NaveenGumaste"
-            brandHoverClass="hover:text-[#C084FC] hover:bg-[#C084FC]/15 hover:shadow-[0_0_20px_rgba(192,132,252,0.35)]"
+            brandHoverClass="hover:text-[#C084FC] hover:bg-[#C084FC]/15 hover:shadow-[0_0_16px_rgba(192,132,252,0.35)]"
           >
-            <GithubLogo size={20} weight="bold" />
+            <GithubLogo size={15} weight="bold" />
           </SocialTooltip>
 
           <SocialTooltip
@@ -192,9 +179,9 @@ export function Hero() {
             handle="@naveengumaste"
             href="https://peerlist.io/naveengumaste"
             ariaLabel="Peerlist @naveengumaste"
-            brandHoverClass="hover:text-[#00AA45] hover:bg-[#00AA45]/15 hover:shadow-[0_0_20px_rgba(0,170,69,0.35)]"
+            brandHoverClass="hover:text-[#00AA45] hover:bg-[#00AA45]/15 hover:shadow-[0_0_16px_rgba(0,170,69,0.35)]"
           >
-            <PeerlistIcon size={19} />
+            <PeerlistIcon size={14.5} />
           </SocialTooltip>
         </div>
       </div>

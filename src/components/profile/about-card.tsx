@@ -23,29 +23,29 @@ export function AboutCard() {
 
   return (
     <div className="relative group w-full">
-      <div className="relative w-full rounded-[26px] sm:rounded-[28px] bg-white/[0.07] backdrop-blur-xl p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-white/10 text-white">
+      <div className="relative w-full rounded-[16px] sm:rounded-[20px] bg-white/[0.07] backdrop-blur-xl p-3 sm:p-3.5 shadow-[0_6px_24px_rgba(0,0,0,0.3)] border border-white/10 text-white">
         {/* Header & Options */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <h3 className="text-sm sm:text-base font-bold tracking-tight text-white">
+        <div className="flex items-center justify-between gap-2 mb-1">
+          <h3 className="text-[11.5px] sm:text-xs font-bold tracking-tight text-white">
             About me
           </h3>
           <button
             type="button"
             onClick={() => setShowMenu(!showMenu)}
-            className="grid size-8 place-items-center rounded-full text-white/60 hover:text-white hover:bg-white/15 transition-all"
+            className="grid size-6.5 sm:size-7 place-items-center rounded-full text-white/60 hover:text-white hover:bg-white/15 transition-all"
             aria-label="Options"
           >
-            <DotsThreeVertical size={18} weight="bold" />
+            <DotsThreeVertical size={14} weight="bold" />
           </button>
         </div>
 
         {/* Bio Copy */}
-        <p className="text-xs sm:text-[13px] leading-relaxed text-slate-200/90">
+        <p className="text-[11px] sm:text-[11.5px] leading-relaxed text-slate-200/90">
           I&apos;m Naveen Gumaste, a Frontend Developer and DevOps Engineer creating high-performance Next.js apps, accessible UIs, and cloud infrastructure. My work blends speed, reliability, and minimal design.
         </p>
 
         {/* Highlight Tags */}
-        <div className="mt-3.5 flex flex-wrap gap-1.5 pt-2.5 border-t border-white/10 text-[11px] text-slate-300/80">
+        <div className="mt-2 flex flex-wrap gap-1 pt-1.5 border-t border-white/10 text-[9.5px] sm:text-[10px] text-slate-300/80">
           <span>📍 {site.location}</span>
           <span>·</span>
           <span>SWE Intern @ CongleX</span>
