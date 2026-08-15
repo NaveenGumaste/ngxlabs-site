@@ -79,7 +79,7 @@ async function generateFavicons() {
       <rect width="1200" height="630" fill="#06080F"/>
       <rect width="1200" height="630" fill="url(#bgGlow)"/>
       <text x="600" y="520" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">Naveen Gumaste</text>
-      <text x="600" y="565" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#94A3B8" text-anchor="middle">Frontend Developer &amp; DevOps Engineer · ngxlabs.site</text>
+      <text x="600" y="565" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#94A3B8" text-anchor="middle">Frontend Developer &amp; DevOps Engineer · ngxlabs.tech</text>
     </svg>
   `;
 

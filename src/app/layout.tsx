@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Geist_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeScript } from "@/components/theme/theme-script";
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Naveen Gumaste • ngxlabs.site",
+        alt: "Naveen Gumaste • ngxlabs.tech",
       },
     ],
   },
@@ -99,7 +100,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -127,6 +136,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="flex min-h-full max-w-full flex-col overflow-x-hidden font-sans">
+        {/* Google Analytics 4 (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-F2DMW4JZ7T"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F2DMW4JZ7T', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         <ThemeScript />
         <JsonLd data={[organizationSchema(), { ...personSchema(), "@context": "https://schema.org" }]} />
         <a
