@@ -11,18 +11,19 @@ export function MeshBackground() {
       {/* 1. Deep Obsidian Base Canvas */}
       <div className="absolute inset-0 bg-[#06080F]" />
 
-      {/* 2. Official Lovable Pulse SVG Layer - 0.5x Wider & Restored Vertical Anchor */}
+      {/* 2. Official Lovable Pulse SVG Layer */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[38%] w-[320vw] sm:w-[280vw] md:w-[240vw] lg:w-[210vw] min-w-[2400px] max-w-[4600px] aspect-[1200/1210] pointer-events-none">
         <Image
           src="/Background/lovable-pulse.svg"
           alt=""
           fill
-          priority
+          priority={false}
+          loading="lazy"
           className="object-contain object-center pointer-events-none select-none"
         />
       </div>
 
-      {/* 3. Top Soft Falloff to blend cleanly into dark obsidian header */}
+      {/* 3. Top Soft Falloff */}
       <div
         className="absolute top-0 inset-x-0 h-48 pointer-events-none"
         style={{

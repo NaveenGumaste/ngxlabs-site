@@ -73,11 +73,11 @@ export function Hero() {
           }}
         >
           <Image
-            src="/images/profile-2.jpg"
+            src="/images/profile-2.webp"
             alt="Naveen Gumaste"
             fill
             priority
-            sizes="(max-width: 640px) 100vw, 480px"
+            sizes="(max-width: 640px) 100vw, 460px"
             className="object-cover object-[center_15%]"
           />
         </div>
