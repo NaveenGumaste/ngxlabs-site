@@ -7,7 +7,6 @@ import {
   GithubLogo,
   InstagramLogo,
   ShareNetwork,
-  Sparkle,
   SpotifyLogo,
   XLogo,
 } from "@phosphor-icons/react";
@@ -41,16 +40,8 @@ export function Hero() {
     <div className="relative w-full bg-black text-white">
       {/* 1. Full-Bleed Integrated Hero Image Container */}
       <div className="relative h-[340px] sm:h-[380px] w-full overflow-hidden">
-        {/* Top Floating Action Buttons (Starburst & Share) */}
-        <div className="absolute top-4 inset-x-4 z-30 flex items-center justify-between pointer-events-auto">
-          <button
-            type="button"
-            aria-label="Profile star"
-            className="grid size-10 place-items-center rounded-full bg-black/40 text-white backdrop-blur-md transition-all hover:bg-black/70 hover:scale-105 active:scale-95 border border-white/15 shadow-sm"
-          >
-            <Sparkle size={18} weight="fill" className="text-white" />
-          </button>
-
+        {/* Top-Right Floating Share Button */}
+        <div className="absolute top-4 right-4 z-30 pointer-events-auto">
           <button
             type="button"
             onClick={handleShare}
