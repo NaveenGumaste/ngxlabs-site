@@ -116,6 +116,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${geistMono.variable} ${dancingScript.variable} ${gambarino.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/profile-2.webp"
+          type="image/webp"
+          // @ts-expect-error fetchpriority is standard in modern HTML
+          fetchpriority="high"
+        />
+      </head>
       <body className="flex min-h-full max-w-full flex-col overflow-x-hidden font-sans">
         <ThemeScript />
         <JsonLd data={[organizationSchema(), { ...personSchema(), "@context": "https://schema.org" }]} />

@@ -77,6 +77,9 @@ export function Hero() {
             alt="Naveen Gumaste"
             fill
             priority
+            unoptimized
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQABAABUB8JQBOgB6LpjplElsAAP7uoGuYs0dXZ5dx15YwkqnEq1/cOpqGlhVp0p3v3qgWPHByX9PwwuAAAA=="
             sizes="(max-width: 640px) 100vw, 460px"
             className="object-cover object-[center_15%]"
           />
