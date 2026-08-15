@@ -12,11 +12,28 @@ import {
 } from "@phosphor-icons/react";
 import { SocialTooltip } from "@/components/profile/social-tooltip";
 
+function PeerlistIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm2.2 10.8H10v3.7H8.3V7.5h6.1a3.25 3.25 0 0 1 0 6.5zm0-1.7a1.55 1.55 0 0 0 0-3.1H10v3.1h4.2z" />
+    </svg>
+  );
+}
+
 export function Hero() {
   const [copied, setCopied] = useState(false);
 
   const handleShare = async () => {
-    const url = typeof window !== "undefined" ? window.location.href : "https://linktr.ee/naveengumaste";
+    const url =
+      typeof window !== "undefined"
+        ? window.location.href
+        : "https://linktr.ee/naveengumaste";
     if (navigator.share) {
       try {
         await navigator.share({
@@ -119,7 +136,7 @@ export function Hero() {
               textShadow: "0 2px 16px rgba(0,0,0,0.8)",
             }}
           >
-            Naveen Gumaste
+            NaveenGumaste
           </span>
         </div>
 
@@ -128,8 +145,8 @@ export function Hero() {
           DevOps Engineer &amp; Frontend Developer
         </p>
 
-        {/* Social Icons Row with Brand-Colored Hover Glow & Adjusted Tooltips */}
-        <div className="mt-6 mb-2 flex items-center justify-center gap-3 text-white">
+        {/* Social Icons Row with Brand-Colored Hover Glow & Tooltips */}
+        <div className="mt-6 mb-2 flex items-center justify-center gap-2.5 sm:gap-3 text-white">
           <SocialTooltip
             name="Instagram"
             handle="@ayee_naveen"
@@ -168,6 +185,16 @@ export function Hero() {
             brandHoverClass="hover:text-[#C084FC] hover:bg-[#C084FC]/15 hover:shadow-[0_0_20px_rgba(192,132,252,0.35)]"
           >
             <GithubLogo size={20} weight="bold" />
+          </SocialTooltip>
+
+          <SocialTooltip
+            name="Peerlist"
+            handle="@naveengumaste"
+            href="https://peerlist.io/naveengumaste"
+            ariaLabel="Peerlist @naveengumaste"
+            brandHoverClass="hover:text-[#00AA45] hover:bg-[#00AA45]/15 hover:shadow-[0_0_20px_rgba(0,170,69,0.35)]"
+          >
+            <PeerlistIcon size={19} />
           </SocialTooltip>
         </div>
       </div>
