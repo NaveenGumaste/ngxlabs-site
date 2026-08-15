@@ -134,13 +134,14 @@ export function Hero() {
           DevOps Engineer &amp; Frontend Developer
         </p>
 
-        {/* Social Icons Row with Animated Tooltips */}
+        {/* Social Icons Row with Brand-Colored Hover Glow & Adjusted Tooltips */}
         <div className="mt-6 mb-2 flex items-center justify-center gap-3 text-white">
           <SocialTooltip
             name="Instagram"
             handle="@ayee_naveen"
             href="https://www.instagram.com/ayee_naveen/"
             ariaLabel="Instagram @ayee_naveen"
+            brandHoverClass="hover:text-[#FF307A] hover:bg-[#FF307A]/15 hover:shadow-[0_0_20px_rgba(255,48,122,0.35)]"
           >
             <InstagramLogo size={20} weight="bold" />
           </SocialTooltip>
@@ -150,6 +151,7 @@ export function Hero() {
             handle="Naveen Gumaste"
             href="https://open.spotify.com"
             ariaLabel="Spotify Profile"
+            brandHoverClass="hover:text-[#1DB954] hover:bg-[#1DB954]/15 hover:shadow-[0_0_20px_rgba(29,185,84,0.35)]"
           >
             <SpotifyLogo size={20} weight="fill" />
           </SocialTooltip>
@@ -159,6 +161,7 @@ export function Hero() {
             handle="@Z0D404"
             href="https://x.com/Z0D404"
             ariaLabel="X @Z0D404"
+            brandHoverClass="hover:text-[#38BDF8] hover:bg-[#38BDF8]/15 hover:shadow-[0_0_20px_rgba(56,189,248,0.35)]"
           >
             <XLogo size={20} weight="bold" />
           </SocialTooltip>
@@ -168,6 +171,7 @@ export function Hero() {
             handle="@NaveenGumaste"
             href="https://github.com/NaveenGumaste"
             ariaLabel="GitHub @NaveenGumaste"
+            brandHoverClass="hover:text-[#C084FC] hover:bg-[#C084FC]/15 hover:shadow-[0_0_20px_rgba(192,132,252,0.35)]"
           >
             <GithubLogo size={20} weight="bold" />
           </SocialTooltip>

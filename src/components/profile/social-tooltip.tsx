@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 interface SocialTooltipProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface SocialTooltipProps {
   handle: string;
   href: string;
   ariaLabel: string;
+  brandHoverClass?: string;
 }
 
 export function SocialTooltip({
@@ -17,6 +19,7 @@ export function SocialTooltip({
   handle,
   href,
   ariaLabel,
+  brandHoverClass,
 }: SocialTooltipProps) {
   const [isHovered, setIsHovered] = useState(false);
   const reduce = useReducedMotion();
@@ -51,17 +54,17 @@ export function SocialTooltip({
             }}
             className="absolute bottom-[calc(100%+8px)] z-50 flex flex-col items-center pointer-events-none whitespace-nowrap"
           >
-            {/* Aceternity-Style Warm Beige Glass Tooltip (+0.5x Scale) */}
-            <div className="relative flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-[#F5F1E8] text-neutral-900 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.6),0_2px_8px_rgba(0,0,0,0.2)] border border-white/80 ring-1 ring-black/5 leading-none">
-              <span className="text-xs sm:text-[13px] font-bold text-neutral-950 tracking-tight">
+            {/* Warm Beige Tooltip (Reduced by 10px in width) */}
+            <div className="relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#F5F1E8] text-neutral-900 shadow-[0_10px_28px_-4px_rgba(0,0,0,0.6),0_2px_8px_rgba(0,0,0,0.2)] border border-white/80 ring-1 ring-black/5 leading-none">
+              <span className="text-[12px] font-bold text-neutral-950 tracking-tight">
                 {name}
               </span>
-              <span className="text-neutral-400 font-mono text-[11px]">·</span>
-              <span className="text-xs sm:text-[12.5px] font-medium text-neutral-600">
+              <span className="text-neutral-400 font-mono text-[10px]">·</span>
+              <span className="text-[11.5px] font-medium text-neutral-600">
                 {handle}
               </span>
 
-              {/* Seamless Bottom Pointer Arrow */}
+              {/* Bottom Pointer Arrow */}
               <div
                 className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 size-2.5 rotate-45 bg-[#F5F1E8] border-r border-b border-white/60 shadow-sm"
                 aria-hidden="true"
@@ -71,13 +74,16 @@ export function SocialTooltip({
         )}
       </AnimatePresence>
 
-      {/* Target Social Link Icon */}
+      {/* Target Social Link Icon with Brand Color on Hover */}
       <a
         href={href}
         target="_blank"
         rel="noreferrer"
         aria-label={ariaLabel}
-        className="grid size-11 place-items-center rounded-full text-white/80 hover:text-white hover:bg-white/[0.1] active:scale-95 transition-all duration-200"
+        className={cn(
+          "grid size-11 place-items-center rounded-full text-white/80 active:scale-95 transition-all duration-200",
+          brandHoverClass || "hover:text-white hover:bg-white/[0.1]"
+        )}
       >
         {children}
       </a>
