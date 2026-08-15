@@ -2,24 +2,38 @@ import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 
-const inputPath = path.resolve("public/favicon.png");
+const inputPath = path.resolve("public/vericon.png");
 const publicDir = path.resolve("public");
 
 async function generateFavicons() {
-  console.log("Generating multi-format, multi-device favicons from public/favicon.png...");
+  console.log("Generating multi-format, multi-device favicons from public/vericon.png...");
+
+  if (!fs.existsSync(inputPath)) {
+    throw new Error(`Master icon not found at ${inputPath}`);
+  }
 
   const inputBuffer = fs.readFileSync(inputPath);
 
-  // 1. Generate WebP & AVIF master favicons
+  // 1. Generate 512x512 Master WebP & AVIF
   await sharp(inputBuffer)
-    .resize(512, 512)
+    .resize(512, 512, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .webp({ quality: 95, effort: 6 })
     .toFile(path.join(publicDir, "favicon.webp"));
 
   await sharp(inputBuffer)
-    .resize(512, 512)
+    .resize(512, 512, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .avif({ quality: 90, effort: 6 })
     .toFile(path.join(publicDir, "favicon.avif"));
+
+  await sharp(inputBuffer)
+    .resize(512, 512, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .webp({ quality: 95, effort: 6 })
+    .toFile(path.join(publicDir, "vericon.webp"));
+
+  await sharp(inputBuffer)
+    .resize(512, 512, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .avif({ quality: 90, effort: 6 })
+    .toFile(path.join(publicDir, "vericon.avif"));
 
   // 2. Multi-resolution WebP, AVIF, and PNG icons
   const sizes = [16, 32, 48, 64, 96, 128, 180, 192, 256, 384, 512];
@@ -46,24 +60,24 @@ async function generateFavicons() {
 
   // 3. Apple Touch Icon (180x180)
   await sharp(inputBuffer)
-    .resize(180, 180)
+    .resize(180, 180, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png({ compressionLevel: 9 })
     .toFile(path.join(publicDir, "apple-touch-icon.png"));
 
   await sharp(inputBuffer)
-    .resize(180, 180)
+    .resize(180, 180, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .webp({ quality: 95 })
     .toFile(path.join(publicDir, "apple-touch-icon.webp"));
 
-  // 4. Default favicon.ico (32x32 PNG container readable as ICO by modern and legacy engines)
+  // 4. Default favicon.ico (32x32 PNG container readable as ICO by modern and legacy browsers)
   await sharp(inputBuffer)
-    .resize(32, 32)
+    .resize(32, 32, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png()
     .toFile(path.join(publicDir, "favicon.ico"));
 
   // 5. Generate high-impact 1200x630 OpenGraph / Social Embed image for WhatsApp, Discord, Slack, Twitter
-  const sphereResized = await sharp(inputBuffer)
-    .resize(440, 440)
+  const iconResized = await sharp(inputBuffer)
+    .resize(440, 440, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png()
     .toBuffer();
 
@@ -86,7 +100,7 @@ async function generateFavicons() {
   await sharp(Buffer.from(svgOverlay))
     .composite([
       {
-        input: sphereResized,
+        input: iconResized,
         top: 55,
         left: 380,
       },
@@ -98,7 +112,7 @@ async function generateFavicons() {
     .webp({ quality: 92 })
     .toFile(path.join(publicDir, "og-image.webp"));
 
-  console.log("Successfully generated all multi-format favicon assets and social embed cards!");
+  console.log("Successfully generated all multi-format favicon assets and social embed cards from vericon.png!");
 }
 
 generateFavicons().catch(console.error);
