@@ -7,7 +7,7 @@ export function MediaCard() {
   return (
     <div className="w-full">
       <a
-        href="http://caravan.naveengumaste.me"
+        href="https://caravan.naveengumaste.me"
         target="_blank"
         rel="noreferrer"
         className="group relative block w-full overflow-hidden rounded-[16px] sm:rounded-[28px] bg-white/[0.07] backdrop-blur-xl border border-white/10 shadow-[0_6px_24px_rgba(0,0,0,0.3)] sm:shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-[1.015] hover:border-white/25"

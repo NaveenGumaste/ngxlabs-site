@@ -7,12 +7,12 @@ export const site = {
   location: "Dharwad, Karnataka, India",
   locale: "en_IN",
   description:
-    "ngxlabs.tech is a Dharwad tech studio led by Naveen Gumaste. Frontend, full-stack, DevOps, and cloud work for startups that need to ship.",
+    "ngxlabs.tech is a Dharwad tech studio led by Naveen Gumaste. DevOps, Cloud and Frontend, work for startups that need to ship.",
   founder: {
     name: "Naveen Gumaste",
-    role: "Frontend developer and DevOps/Cloud engineer",
+    role: "DevOps/Cloud and Web Frontend engineer",
     photo: "/images/naveen-gumaste.webp",
-    bio: "I'm a Frontend developer and DevOps/Cloud Engineer focused on creating performant, accessible, and uniquely designed digital products. I obsess over minimal code and solving problems, Whether that's shipping features, optimizing cloud infrastructure, or making sure your app doesn't crawl. Pretty much a keyboard warrior when I'm not taking breaks!",
+    bio: "I'm a DevOps/Cloud and Web Frontend engineer focused on creating performant, accessible, uniquely designed digital products. I specialize in building fast web apps and cloud infrastructure for startups and small businesses.",
     education: [
       {
         school: "KLE Technological University, Hubballi",

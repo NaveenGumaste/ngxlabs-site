@@ -12,7 +12,7 @@ export function AboutCard() {
     e.preventDefault();
     e.stopPropagation();
     if (navigator.clipboard) {
-      await navigator.clipboard.writeText("https://naveengumaste.me");
+      await navigator.clipboard.writeText(site.url);
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -42,7 +42,7 @@ export function AboutCard() {
 
         {/* Bio Copy */}
         <p className="text-[11px] sm:text-[13px] leading-relaxed text-slate-200/90">
-          I&apos;m Naveen Gumaste, a Frontend Developer and DevOps Engineer creating high-performance Next.js apps, accessible UIs, and cloud infrastructure. My work blends speed, reliability, and minimal design.
+          {site.founder.bio}
         </p>
 
         {/* Highlight Tags */}

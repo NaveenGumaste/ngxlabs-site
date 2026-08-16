@@ -10,13 +10,13 @@ export function CardMotion({ children }: CardMotionProps) {
   const reduce = useReducedMotion();
 
   return (
-    <motion.main
+    <motion.div
       initial={
         reduce
           ? { opacity: 1, y: 0, scale: 1 }
           : {
               opacity: 0,
-              y: 44, // Starts below and rises up in sync with background
+              y: 44,
               scale: 0.96,
             }
       }
@@ -27,12 +27,12 @@ export function CardMotion({ children }: CardMotionProps) {
       }}
       transition={{
         duration: 1.8,
-        delay: 0.08, // Subtle follow-through offset
-        ease: [0.16, 1, 0.3, 1], // Identical Lovable exponential ease curve
+        delay: 0.08,
+        ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative z-10 w-[86vw] max-w-[325px] sm:w-full sm:max-w-[460px] md:max-w-[470px] flex flex-col items-center overflow-hidden rounded-[24px] sm:rounded-[44px] bg-black shadow-[0_16px_50px_rgba(0,0,0,0.9)] sm:shadow-[0_24px_80px_rgba(0,0,0,0.9)] border border-white/10 will-change-transform"
+      className="relative z-10 flex w-[86vw] max-w-[325px] sm:w-full sm:max-w-[460px] md:max-w-[470px] flex-col items-center overflow-hidden rounded-[24px] sm:rounded-[44px] bg-black shadow-[0_8px_18px_-10px_rgba(0,0,0,0.35)] border border-white/10"
     >
       {children}
-    </motion.main>
+    </motion.div>
   );
 }

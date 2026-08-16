@@ -1,22 +1,15 @@
-import {
-  Compass,
-  CurrencyBtc,
-  Globe,
-  RocketLaunch,
-  Wrench,
-} from "@phosphor-icons/react/dist/ssr";
 import { MeshBackground } from "@/components/profile/mesh-background";
 import { Hero } from "@/components/profile/hero";
 import { LinkButton } from "@/components/profile/link-button";
 import { MediaCard } from "@/components/profile/media-card";
-import { GridCard } from "@/components/profile/grid-card";
+import { ProjectList } from "@/components/profile/project-list";
 import { AboutCard } from "@/components/profile/about-card";
 import { Footer } from "@/components/profile/footer";
 import { CardMotion } from "@/components/profile/card-motion";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen w-full text-white flex flex-col items-center justify-between py-4 px-4 sm:py-8 sm:px-6">
+    <div className="relative flex w-full min-h-0 flex-col items-center px-4 pt-4 pb-3 text-white sm:px-6 sm:pt-6 sm:pb-4">
       {/* 1. Atmospheric Mesh Gradient Background with Rising Animation */}
       <MeshBackground />
 
@@ -35,7 +28,7 @@ export default function HomePage() {
           {/* 2. Main Portfolio Link Button */}
           <LinkButton
             href="https://naveengumaste.me"
-            title="My website"
+            title="Portfolio Site"
             subtitle="naveengumaste.me"
             thumbnail="/images/naveen-profile.jpg"
             isExternal={true}
@@ -49,53 +42,12 @@ export default function HomePage() {
             <MediaCard />
           </div>
 
-          {/* 4. Apps & Developer Tools Grid */}
+          {/* 4. Apps & Open Source */}
           <div className="flex flex-col gap-1.5 sm:gap-2.5 mt-0.5 sm:mt-1">
             <p className="text-center font-semibold sm:font-bold text-[9.5px] sm:text-xs text-slate-400 sm:text-slate-300/80 tracking-wider uppercase">
-              Apps &amp; Open Source
+              Products &amp; Open Source Projects
             </p>
-
-            <GridCard />
-
-            <LinkButton
-              href="https://one-unitools.vercel.app/"
-              title="UniTools"
-              subtitle="40+ free utilities for file conversion & dev workflows"
-              icon={<Wrench className="size-4 sm:size-5" weight="bold" />}
-              isExternal={true}
-            />
-
-            <LinkButton
-              href="https://kairocal.naveengumaste.me/"
-              title="KairoCal"
-              subtitle="India's only multi-broker fee comparison calculator"
-              icon={<RocketLaunch className="size-4 sm:size-5" weight="bold" />}
-              isExternal={true}
-            />
-
-            <LinkButton
-              href="https://gitviz.naveengumaste.me/"
-              title="GitViz"
-              subtitle="Interactive Git commit & branch visualizer map"
-              icon={<Compass className="size-4 sm:size-5" weight="bold" />}
-              isExternal={true}
-            />
-
-            <LinkButton
-              href="https://cryptoz1.vercel.app/"
-              title="CryptoZ Dashboard"
-              subtitle="Real-time cryptocurrency analytics & tracking"
-              icon={<CurrencyBtc className="size-4 sm:size-5" weight="bold" />}
-              isExternal={true}
-            />
-
-            <LinkButton
-              href="https://naveengumaste.me"
-              title="Full Portfolio & Engineering Case Studies"
-              subtitle="Deep-dive benchmarks, architecture & live demos"
-              icon={<Globe className="size-4 sm:size-5" weight="bold" />}
-              isExternal={true}
-            />
+            <ProjectList />
           </div>
         </div>
       </CardMotion>
