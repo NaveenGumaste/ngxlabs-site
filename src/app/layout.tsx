@@ -131,11 +131,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           as="image"
           href="/images/profile-2.webp"
           type="image/webp"
-          // @ts-expect-error fetchpriority is standard in modern HTML
-          fetchpriority="high"
+          fetchPriority="high"
         />
       </head>
-      <body className="flex min-h-full max-w-full flex-col overflow-x-hidden font-sans">
+      <body
+        className="flex min-h-full max-w-full flex-col overflow-x-hidden font-sans"
+        suppressHydrationWarning
+      >
         {/* Google Analytics 4 (gtag.js) */}
         <Script
           strategy="afterInteractive"
