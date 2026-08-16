@@ -1,59 +1,35 @@
+"use client";
+
+import { site } from "@/lib/site";
+import { SquiggleUnderline } from "@/components/motion/squiggle-underline";
+
+let clickSound: HTMLAudioElement | null = null;
+
+function playZodClick() {
+  if (!clickSound) {
+    clickSound = new Audio("/Sound/keyboard-click.mp3");
+    clickSound.preload = "auto";
+    clickSound.volume = 0.6;
+  }
+  clickSound.currentTime = 0;
+  void clickSound.play();
+}
+
 export function Footer() {
   return (
-    <footer className="mt-5 sm:mt-10 mb-3 sm:mb-6 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-0.5 sm:gap-y-1 text-center text-[9.5px] sm:text-xs text-slate-400/80">
-      <a
-        href="https://linktr.ee/privacy"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        Cookie Preferences
-      </a>
-      <span>•</span>
-      <a
-        href="https://linktr.ee/s/about/trust-center/report/?field86145911=https%3A%2F%2Flinktr.ee%2Fnaveengumaste"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        Report
-      </a>
-      <span>•</span>
-      <a
-        href="https://linktr.ee/privacy"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        Privacy
-      </a>
-      <span>•</span>
-      <a
-        href="https://linktr.ee"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        Explore
-      </a>
-      <span>•</span>
-      <a
-        href="https://naveengumaste.me"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        About this account
-      </a>
-      <span>•</span>
-      <a
-        href="https://linktr.ee"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-white transition-colors"
-      >
-        More from Linktree
-      </a>
+    <footer className="relative z-20 mt-3 bg-transparent shadow-none pb-[max(0.25rem,env(safe-area-inset-bottom))] sm:mt-4">
+      <p className="text-center font-dance font-bold text-[15px] tracking-wide text-black sm:text-[16px]">
+        Designed by{" "}
+        <a
+          href={site.social.x}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={playZodClick}
+          className="group/zod relative pointer-cursor inline-block font-mono font-bold tracking-[0.14em] text-white/80 no-underline transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-yellow-300 focus-visible:text-yellow-300"
+        >
+          <SquiggleUnderline>ZOD404</SquiggleUnderline>
+        </a>
+      </p>
     </footer>
   );
 }

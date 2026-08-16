@@ -12,8 +12,13 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
-  --font-sans: var(--font-gambarino), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-gambarino), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-dance: "(--font-dancing-script)", cursive;
+  --font-sans:
+    var(--font-gambarino), var(--font-inter), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display:
+    var(--font-gambarino), var(--font-inter), ui-sans-serif, system-ui,
+    sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
@@ -72,20 +77,71 @@ h4 {
 }
 
 @keyframes equalizer-1 {
-  0%, 100% { height: 25%; }
-  50% { height: 95%; }
+  0%,
+  100% {
+    height: 25%;
+  }
+  50% {
+    height: 95%;
+  }
 }
 @keyframes equalizer-2 {
-  0%, 100% { height: 90%; }
-  50% { height: 35%; }
+  0%,
+  100% {
+    height: 90%;
+  }
+  50% {
+    height: 35%;
+  }
 }
 @keyframes equalizer-3 {
-  0%, 100% { height: 40%; }
-  50% { height: 100%; }
+  0%,
+  100% {
+    height: 40%;
+  }
+  50% {
+    height: 100%;
+  }
 }
 @keyframes equalizer-4 {
-  0%, 100% { height: 75%; }
-  50% { height: 25%; }
+  0%,
+  100% {
+    height: 75%;
+  }
+  50% {
+    height: 25%;
+  }
+}
+
+@keyframes rose-gradient-left-to-right {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.signature-fill-gradient {
+  background-image: linear-gradient(
+    90deg,
+    #fb7185 0%,
+    #f43f5e 40%,
+    #fda4af 80%,
+    #fb7185 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: clip-path;
+}
+
+.group\/signature:hover .signature-fill-gradient {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -98,3 +154,4 @@ h4 {
     scroll-behavior: auto !important;
   }
 }
+

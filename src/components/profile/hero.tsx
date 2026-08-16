@@ -11,6 +11,8 @@ import {
   XLogo,
 } from "@phosphor-icons/react";
 import { SocialTooltip } from "@/components/profile/social-tooltip";
+import { SquiggleUnderline } from "@/components/motion/squiggle-underline";
+import { site } from "@/lib/site";
 
 function PeerlistIcon({ className }: { className?: string }) {
   return (
@@ -30,9 +32,7 @@ export function Hero() {
 
   const handleShare = async () => {
     const url =
-      typeof window !== "undefined"
-        ? window.location.href
-        : "https://linktr.ee/naveengumaste";
+      typeof window !== "undefined" ? window.location.href : site.url;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -120,20 +120,41 @@ export function Hero() {
       {/* 2. Profile Info Header */}
       <div className="relative z-20 px-3 sm:px-6 -mt-6 sm:-mt-8 pb-2.5 sm:pb-4 text-center flex flex-col items-center">
         {/* Stylized Signature Script Wordmark using Dancing Script */}
-        <div className="flex items-center justify-center my-0.5 sm:my-1">
-          <span
-            className="text-[28px] sm:text-5xl md:text-6xl font-bold text-white drop-shadow-md select-none tracking-wide text-center"
-            style={{
-              fontFamily: "var(--font-dancing-script), cursive",
-              textShadow: "0 2px 16px rgba(0,0,0,0.8)",
-            }}
+        <div
+          data-squiggle-host
+          className="group/signature relative my-0.5 inline-flex flex-col items-center overflow-visible sm:my-1 cursor-pointer"
+        >
+          <SquiggleUnderline
+            intensity="swash"
+            className="text-rose-400/60 transition-colors duration-500 group-hover/signature:text-rose-400"
           >
-            NaveenGumaste
-          </span>
+            <span
+              className="relative inline-block select-none pb-1 text-center text-[28px] font-bold tracking-wide sm:pb-1.5 sm:text-5xl md:text-6xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] transition-all duration-500 group-hover/signature:drop-shadow-[0_2px_18px_rgba(244,63,94,0.45)]"
+              style={{
+                fontFamily: "var(--font-dancing-script), cursive",
+              }}
+            >
+              {/* Base Solid White Text */}
+              <span className="inline-block text-white">
+                NaveenGumaste
+              </span>
+
+              {/* Progressive Rose Gradient Text (Fills from letter 'N' to 'e' on Hover) */}
+              <span
+                aria-hidden="true"
+                className="signature-fill-gradient pointer-events-none absolute inset-0 inline-block"
+                style={{
+                  fontFamily: "var(--font-dancing-script), cursive",
+                }}
+              >
+                NaveenGumaste
+              </span>
+            </span>
+          </SquiggleUnderline>
         </div>
 
         {/* Role Subtitle */}
-        <p className="mt-0.5 sm:mt-1 text-[10.5px] sm:text-sm font-medium text-white/80">
+        <p className="mt-2 text-[10.5px] font-medium text-white/80 sm:mt-2.5 sm:text-sm">
           DevOps Engineer &amp; Frontend Developer
         </p>
 
@@ -162,7 +183,7 @@ export function Hero() {
           <SocialTooltip
             name="X (Twitter)"
             handle="@Z0D404"
-            href="https://x.com/Z0D404"
+            href={site.social.x}
             ariaLabel="X @Z0D404"
             brandHoverClass="hover:text-[#38BDF8] hover:bg-[#38BDF8]/15 hover:shadow-[0_0_20px_rgba(56,189,248,0.35)]"
           >
@@ -172,7 +193,7 @@ export function Hero() {
           <SocialTooltip
             name="GitHub"
             handle="@NaveenGumaste"
-            href="https://github.com/NaveenGumaste"
+            href={site.social.github}
             ariaLabel="GitHub @NaveenGumaste"
             brandHoverClass="hover:text-[#C084FC] hover:bg-[#C084FC]/15 hover:shadow-[0_0_20px_rgba(192,132,252,0.35)]"
           >
@@ -181,9 +202,9 @@ export function Hero() {
 
           <SocialTooltip
             name="Peerlist"
-            handle="@naveengumaste"
-            href="https://peerlist.io/naveengumaste"
-            ariaLabel="Peerlist @naveengumaste"
+            handle="@zod404"
+            href={site.social.peerlist}
+            ariaLabel="Peerlist @zod404"
             brandHoverClass="hover:text-[#00AA45] hover:bg-[#00AA45]/15 hover:shadow-[0_0_20px_rgba(0,170,69,0.35)]"
           >
             <PeerlistIcon className="size-4 sm:size-5" />
