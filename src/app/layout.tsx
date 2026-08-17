@@ -6,6 +6,7 @@ import { ThemeScript } from "@/components/theme/theme-script";
 import { JsonLd } from "@/components/seo/json-ld";
 import { organizationSchema, personSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -169,6 +170,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="content" className="flex-1">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );
